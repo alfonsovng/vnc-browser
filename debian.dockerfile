@@ -1,5 +1,5 @@
 # Use a minimal base image
-FROM debian:stable-slim
+FROM debian:12.7-slim
 
 # Build arguments to set environment variables at build time
 ARG DEF_VNC_SCREEN=0

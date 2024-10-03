@@ -3,7 +3,9 @@ set -e
 
 # Store the password
 if [ "$VNC_PASSWORD" ]; then
-    sed -i "s/^\(command.*x11vnc.*\)$/\1 -passwd '$VNC_PASSWORD'/" /app/conf.d/x11vnc.conf
+    sed -i "s/^\(command.*x11vnc.*\)$/\1 -usepw -passwd '$VNC_PASSWORD'/" /app/conf.d/x11vnc.conf
+else
+    sed -i "s/^\(command.*x11vnc.*\)$/\1 -nopw/" /app/conf.d/x11vnc.conf
 fi
 
 # Print current VNC info

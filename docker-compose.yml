@@ -1,0 +1,12 @@
+services:
+  vnc-browser:
+    build:
+      context: .
+      dockerfile: debian.dockerfile
+    ports:
+      - "5900:5900"
+      - "6080:6080"
+    environment:
+      VNC_PASSWORD: "" # empty means no password
+      AUTO_START_XTERM: false
+    restart: unless-stopped
